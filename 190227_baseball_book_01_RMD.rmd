@@ -1,0 +1,28 @@
+---
+title: "Correlation between Hit & Run Scored"
+author: "David H."
+date: "2019년 2월 27일"
+output: html_document
+---
+
+## Purpose
+Using team data for the season of 2016,
+I tested the correlation between Hit and Run Scored.
+
+### Result
+```{r echo=FALSE, warning=false}
+library(Lahman)
+dat<-subset(Teams, yearID==2016, select=c(R,H))
+```
+
+Correlation coefficient is 'r cor(dat$R, dat$H)'.
+
+## Findings
+I found a positive relationship between the two variables.
+
+### Scatterplot
+* I plotted the relationship.
+
+```{r echo=False}
+plot(dat$H, dat$R)
+```
